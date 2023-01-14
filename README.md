@@ -1,6 +1,6 @@
 # Odczyt/zapis z serwera ekontrol dla pomp ciepła Hewalex.
 
-<h3>hewalex.py - odczyt parametów z serwera</h3>
+<h3> - hewalex.py - odczyt parametów z serwera</h3>
 <h3>hewalex_magCiepla_on.py - ustawienie harmonogramu magazyn ciepła w danym dniu</h3>
 
   Program sprawdza dzień tygodnia i ustawia harmonogram magazynu dla całego dnia we wszystkich godzinach.
