@@ -19,3 +19,6 @@ aaaa - należy podać ciąg znaków logowania do ekontrol. Ciąg wygenerowany je
 
 bbbb - numer seryjny sterownika. Znajdziesz go w ekontrol.pl -> mój profil -> urządzenia -> sterowniki -> numer seryjny
 
+# Wywołanie w Node-Red
+
+
