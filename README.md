@@ -11,6 +11,8 @@
 
 <h3> - hewalex_set_2880.py - ustawienie temperatury dla magazynu ciepła</h3>
 
+  Ustawia temperature dla magazynu ciepła. Wartość temperatury należy podać przy wywołaniu programu. Jak jej nie podamy ustawimy 42 stC.
+
 # Ustawienia
 
 aaaa - należy podać ciąg znaków logowania do ekontrol. Ciąg wygenerowany jest przez skrypty na stronie ekontrol.pl podczas logowania. Można go podejrzeć w przeglądarce narzędziu dla developerów.  
