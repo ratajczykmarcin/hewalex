@@ -27,4 +27,7 @@ cccc - Controller_ID - numer można odczytać w liście parametrów zwracanych p
 
 <h2> Node-Red</h2>
 
-<pre> </pre>
+<h3> - node-red.txt - wywołanie w node-red/h3>
+
+Wywołanie programów w node-red i wystawienie parametrów po mqtt do np. HA.
+
