@@ -1,0 +1,1276 @@
+sensor:
+    - name: "Status odczytu parametrów"
+      state_topic: "host/hewalex/status/readparameters"
+      unique_id: "Hewalex - Status odczytu parametrow"
+      object_id: "Hewalex - Status odczytu parametrow"
+      value_template: "{{ value }}"
+      #unit_of_measurement: "V"
+      #json_attributes_topic: "host/hewalex/status/tempmagciepla"
+      #json_attributes_template: "{{ value_json.p100 | tojson }}"
+      #icon: "mdi:sine-wave"
+      #device_class: voltage
+      #availability:
+      #  - topic: "host/hewalex/availability"
+      #payload_available: "online"
+      #payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"    
+        
+        
+    - name: "Status set temp. mag. ciepła"
+      state_topic: "host/hewalex/status/settempmagciepla"
+      unique_id: "Hewalex - Status set temp. mag. ciepła"
+      object_id: "Hewalex - Status set temp. mag. ciepła"
+      value_template: "{{ value }}"
+      #unit_of_measurement: "V"
+      #json_attributes_topic: "host/hewalex/status/tempmagciepla"
+      #json_attributes_template: "{{ value_json.p100 | tojson }}"
+      #icon: "mdi:sine-wave"
+      #device_class: voltage
+      #availability:
+      #  - topic: "host/hewalex/availability"
+      #payload_available: "online"
+      #payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"    
+        
+    - name: "Status set mag. ciepła"
+      state_topic: "host/hewalex/status/setmagciepla"
+      unique_id: "Hewalex - Status set mag. ciepła"
+      object_id: "Hewalex - Status set mag. ciepła"
+      value_template: "{{ value }}"
+      #unit_of_measurement: "V"
+      #json_attributes_topic: "host/hewalex/status/tempmagciepla"
+      #json_attributes_template: "{{ value_json.p100 | tojson }}"
+      #icon: "mdi:sine-wave"
+      #device_class: voltage
+      #availability:
+      #  - topic: "host/hewalex/availability"
+      #payload_available: "online"
+      #payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"    
+
+    - name: "Conroller ID"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - Conroller ID"
+      object_id: "Hewalex - Conroller ID"
+      value_template: "{{ value_json.controller_id }}"
+      #unit_of_measurement: "V"
+      #json_attributes_topic: "host/hewalex"
+      #json_attributes_template: "{{ value_json.p100 | tojson }}"
+      #icon: "mdi:sine-wave"
+      #device_class: voltage
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"    
+        
+    - name: "ID sterownika"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - ID sterownika"
+      object_id: "Hewalex - ID sterownika"
+      value_template: "{{ value_json.p100.value }}"
+      #unit_of_measurement: "V"
+      json_attributes_topic: "host/hewalex"
+      json_attributes_template: "{{ value_json.p100 | tojson }}"
+      #icon: "mdi:sine-wave"
+      #device_class: voltage
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"    
+        
+        
+    - name: "Numer seryjny"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - Numer seryjny"
+      object_id: "Hewalex - Numer seryjny"
+      value_template: "{{ value_json.p106.value }}"
+      #unit_of_measurement: "V"
+      json_attributes_topic: "host/hewalex"
+      json_attributes_template: "{{ value_json.p106 | tojson }}"
+      #icon: "mdi:sine-wave"
+      #device_class: voltage
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"    
+        
+        
+    - name: "ID modulu"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - ID modulu"
+      object_id: "Hewalex - ID modulu"
+      value_template: "{{ value_json.p110.value }}"
+      #unit_of_measurement: "V"
+      json_attributes_topic: "host/hewalex"
+      json_attributes_template: "{{ value_json.p110 | tojson }}"
+      #icon: "mdi:sine-wave"
+      #device_class: voltage
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"    
+        
+        
+    - name: "Last update"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - date_change"
+      object_id: "Hewalex - date_change"
+      value_template: "{{ value_json.date_change }}"
+      #unit_of_measurement: "V"
+      #json_attributes_topic: "host/hewalex"
+      #json_attributes_template: "{{ value_json.date_change | tojson }}"
+      icon: "mdi:calendar-clock"
+      #device_class: timestamp
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"                   
+
+        
+    - name: "Stan kontrolera PG-426"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - Stan_kontrolera"
+      object_id: "Hewalex - Stan_kontrolera"
+      value_template: "{{ value_json.p128.form_array[value_json.p128.value] }}"
+      #unit_of_measurement: "V"
+      json_attributes_topic: "host/hewalex"
+      json_attributes_template: "{{ value_json.p128 | tojson }}"
+      icon: "mdi:controller"
+      #device_class: voltage
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"                   
+        
+
+    - name: "Temp. CWU - T1"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - Temp. CWU - T1"
+      object_id: "Hewalex - Temp. CWU - T1"
+      value_template: "{{ value_json.p130.value }}"
+      unit_of_measurement: "°C"
+      json_attributes_topic: "host/hewalex"
+      json_attributes_template: "{{ value_json.p130 | tojson }}"
+      #icon: "mdi:thermometer"
+      device_class: temperature
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"        
+        
+        
+    - name: "Temp. bufor CO - T2"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - temp. bufor CO - T2"
+      object_id: "Hewalex - temp. bufor CO - T2"
+      value_template: "{{ value_json.p132.value }}"
+      unit_of_measurement: "°C"
+      json_attributes_topic: "host/hewalex"
+      json_attributes_template: "{{ value_json.p132 | tojson }}"
+      #icon: "mdi:thermometer"
+      device_class: temperature
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"
+
+
+    - name: "Temp. wody na wlocie do skraplacza - T3"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - temp. wody na wlocie do skraplacza - T3"
+      object_id: "Hewalex - temp. wody na wlocie do skraplacza - T3"
+      value_template: "{{ value_json.p134.value }}"
+      unit_of_measurement: "°C"
+      json_attributes_topic: "host/hewalex"
+      json_attributes_template: "{{ value_json.p134 | tojson }}"
+      #icon: "mdi:thermometer"
+      device_class: temperature
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"
+
+
+    - name: "Temp. czynnika za skraplaczem - T4"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - temp. czynnika za skraplaczem - T4"
+      object_id: "Hewalex - temp. czynnika za skraplaczem - T4"
+      value_template: "{{ value_json.p136.value }}"
+      unit_of_measurement: "°C"
+      json_attributes_topic: "host/hewalex"
+      json_attributes_template: "{{ value_json.p136 | tojson }}"
+      #icon: "mdi:thermometer"
+      device_class: temperature
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"
+
+
+    - name: "Temp. wody na wylocie ze skraplacza - T6"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - temp. wody na wylocie ze skraplacza - T6"
+      object_id: "Hewalex - temp. wody na wylocie ze skraplacza - T6"
+      value_template: "{{ value_json.p140.value }}"
+      unit_of_measurement: "°C"
+      json_attributes_topic: "host/hewalex"
+      json_attributes_template: "{{ value_json.p140 | tojson }}"
+      #icon: "mdi:thermometer"
+      device_class: temperature
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"
+
+
+    - name: "Temp. powrót z instalacji CO - T7"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - temp. powrót z instalacji CO - T7"
+      object_id: "Hewalex - temp. powrót z instalacji CO - T7"
+      value_template: "{{ value_json.p142.value }}"
+      unit_of_measurement: "°C"
+      json_attributes_topic: "host/hewalex"
+      json_attributes_template: "{{ value_json.p142 | tojson }}"
+      #icon: "mdi:thermometer"
+      device_class: temperature
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"
+
+
+    - name: "Temp. wody na wylocie z pompy ciepła - T8"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - temp. wody na wylocie z pompy ciepła - T8"
+      object_id: "Hewalex - temp. wody na wylocie z pompy ciepła - T8"
+      value_template: "{{ value_json.p144.value }}"
+      unit_of_measurement: "°C"
+      json_attributes_topic: "host/hewalex"
+      json_attributes_template: "{{ value_json.p144 | tojson }}"
+      #icon: "mdi:thermometer"
+      device_class: temperature
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"
+
+
+    - name: "Temp. powrotu cyrkulacji CWU - T9"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - temp. powrotu cyrkulacji - T9"
+      object_id: "Hewalex - temp. powrotu cyrkulacji - T9"
+      value_template: "{{ value_json.p146.value }}"
+      unit_of_measurement: "°C"
+      json_attributes_topic: "host/hewalex"
+      json_attributes_template: "{{ value_json.p146 | tojson }}"
+      #icon: "mdi:thermometer"
+      device_class: temperature
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"
+        
+        
+    - name: "Temp. za mieszaczem CO - T11"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - Temp. za mieszaczem CO - T11"
+      object_id: "Hewalex - Temp. za mieszaczem CO - T11"
+      value_template: "{{ value_json.p150.value }}"
+      unit_of_measurement: "°C"
+      json_attributes_topic: "host/hewalex"
+      json_attributes_template: "{{ value_json.p150 | tojson }}"
+      #icon: "mdi:thermometer"
+      device_class: temperature
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"
+        
+        
+    - name: "Temp. pokojowa obiegu CO2 - T13"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - temp. pokojowa obiegu CO2 - T13"
+      object_id: "Hewalex - temp. pokojowa obiegu CO2 - T13"
+      value_template: "{{ value_json.p154.value }}"
+      unit_of_measurement: "°C"
+      json_attributes_topic: "host/hewalex"
+      json_attributes_template: "{{ value_json.p154 | tojson }}"
+      #icon: "mdi:thermometer"
+      device_class: temperature
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"
+        
+        
+    - name: "Temp. zewnętrzna - T14"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - temp. zewnętrzna - T14"
+      object_id: "Hewalex - temp. zewnętrzna - T14"
+      value_template: "{{ value_json.p156.value }}"
+      unit_of_measurement: "°C"
+      json_attributes_topic: "host/hewalex"
+      json_attributes_template: "{{ value_json.p156 | tojson }}"
+      #icon: "mdi:thermometer"
+      device_class: temperature
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"
+
+    - name: "Stan"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - Stan_algorytmu"
+      object_id: "Hewalex - Stan_algorytmu"
+      value_template: |
+        {% if value_json.p196.value == 0 %}
+            Gotowość
+        {% else %}
+            {% for i in range(32) %}
+                {% if value_json.p196.value|int|bitwise_and(2**i) > 0  %}
+                    {{ value_json.p196.array_bits_text[i] }}
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+      #unit_of_measurement: "°C"
+      json_attributes_topic: "host/hewalex"
+      json_attributes_template: "{{ value_json.p196 | tojson }}"
+      #icon: "mdi:thermometer"
+      #device_class: temperature
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"
+
+
+    - name: "Pk - bieg sprężarki"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - Pk - bieg sprężarki"
+      object_id: "Hewalex - Pk - bieg sprężarki"
+      value_template: "{{ value_json.p200.value }}"
+      unit_of_measurement: ""
+      json_attributes_topic: "host/hewalex"
+      json_attributes_template: "{{ value_json.p200 | tojson }}"
+      #icon: "mdi:thermometer"
+      #device_class: temperature
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"
+
+
+    - name: "Bieg pompy skraplacza"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - Bieg pompy skraplacza"
+      object_id: "Hewalex - Bieg pompy skraplacza"
+      value_template: "{{ value_json.p212.value }}"
+      unit_of_measurement: ""
+      json_attributes_topic: "host/hewalex"
+      json_attributes_template: "{{ value_json.p212 | tojson }}"
+      #icon: "mdi:thermometer"
+      #device_class: temperature
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"
+
+
+    - name: "Temp. powietrza na wlocie do pomy ciepła - Ta"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - Temp. powietrza na wlocie do pomy ciepła - Ta"
+      object_id: "Hewalex - Temp. powietrza na wlocie do pomy ciepła - Ta"
+      value_template: "{{ value_json.p300.value }}"
+      unit_of_measurement: "°C"
+      json_attributes_topic: "host/hewalex"
+      json_attributes_template: "{{ value_json.p300 | tojson }}"
+      #icon: "mdi:thermometer"
+      device_class: temperature
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"        
+
+
+    - name: "Temp. czynnika w parowniku - Tp"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - Temp. czynnika w parowniku - Tp"
+      object_id: "Hewalex - Temp. czynnika w parowniku - Tp"
+      value_template: "{{ value_json.p302.value }}"
+      unit_of_measurement: "°C"
+      json_attributes_topic: "host/hewalex"
+      json_attributes_template: "{{ value_json.p302 | tojson }}"
+      #icon: "mdi:thermometer"
+      device_class: temperature
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"    
+
+
+    - name: "Temp. czynnika za sprężarką - Td"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - Temp. czynnika za sprężarką - Td"
+      object_id: "Hewalex - Temp. czynnika za sprężarką - Td"
+      value_template: "{{ value_json.p304.value }}"
+      unit_of_measurement: "°C"
+      json_attributes_topic: "host/hewalex"
+      json_attributes_template: "{{ value_json.p304 | tojson }}"
+      #icon: "mdi:thermometer"
+      device_class: temperature
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"            
+
+
+    - name: "Temp. czynnika przed sprężarką - Ts"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - Temp. czynnika przed sprężarką - Ts"
+      object_id: "Hewalex - Temp. czynnika przed sprężarką - Ts"
+      value_template: "{{ value_json.p306.value }}"
+      unit_of_measurement: "°C"
+      json_attributes_topic: "host/hewalex"
+      json_attributes_template: "{{ value_json.p306 | tojson }}"
+      #icon: "mdi:thermometer"
+      device_class: temperature
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"                    
+
+
+    - name: "Stopień otwarcia zaworu rozprężnego - EV1"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - Stopień otwarcia zaworu rozprężnego - EV1"
+      object_id: "Hewalex - Stopień otwarcia zaworu rozprężnego - EV1"
+      value_template: "{{ value_json.p316.value }}"
+      unit_of_measurement: ""
+      json_attributes_topic: "host/hewalex"
+      json_attributes_template: "{{ value_json.p316 | tojson }}"
+      #icon: "mdi:thermometer"
+      #device_class: temperature
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"                            
+
+
+    - name: "Natężenie prądu"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - Natężenie prądu"
+      object_id: "Hewalex - Natężenie prądu"
+      value_template: "{{ value_json.p318.value }}"
+      unit_of_measurement: "A"
+      json_attributes_topic: "host/hewalex"
+      json_attributes_template: "{{ value_json.p318 | tojson }}"
+      #icon: "mdi:thermometer"
+      device_class: current
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"                            
+                
+
+    - name: "Napięcie zasilania"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - Napięcie zasilania"
+      object_id: "Hewalex - Napięcie zasilania"
+      value_template: "{{ value_json.p320.value }}"
+      unit_of_measurement: "V"
+      json_attributes_topic: "host/hewalex"
+      json_attributes_template: "{{ value_json.p320 | tojson }}"
+      #icon: "mdi:sine-wave"
+      device_class: voltage
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"    
+                
+
+    - name: "Częstotliwość pracy sprężarki"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - Częstotliwość pracy sprężarki"
+      object_id: "Hewalex - Częstotliwość pracy sprężarki"
+      value_template: "{{ value_json.p322.value }}"
+      unit_of_measurement: "Hz"
+      json_attributes_topic: "host/hewalex"
+      json_attributes_template: "{{ value_json.p322 | tojson }}"
+      #icon: "mdi:sine-wave"
+      device_class: frequency
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"    
+                
+
+    - name: "Pe - ciśnienie w parowniku"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - Pe - ciśnienie w parowniku"
+      object_id: "Hewalex - Pe - ciśnienie w parowniku"
+      value_template: "{{ value_json.p326.value }}"
+      unit_of_measurement: "bar"
+      json_attributes_topic: "host/hewalex"
+      json_attributes_template: "{{ value_json.p326 | tojson }}"
+      #icon: "mdi:sine-wave"
+      device_class: pressure
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"           
+                
+
+    - name: "Ps - ciśnienie w skraplaczu"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - Ps - ciśnienie w skraplaczu"
+      object_id: "Hewalex - Ps - ciśnienie w skraplaczu"
+      value_template: "{{ value_json.p330.value }}"
+      unit_of_measurement: "bar"
+      json_attributes_topic: "host/hewalex"
+      json_attributes_template: "{{ value_json.p330 | tojson }}"
+      #icon: "mdi:sine-wave"
+      device_class: pressure
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"                   
+                
+
+    - name: "Temp. ustawiona dla CWU"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - Temp. ustawiona dla CWU"
+      object_id: "Hewalex - Temp. ustawiona dla CWU"
+      value_template: "{{ value_json.p408.value }}"
+      unit_of_measurement: "°C"
+      json_attributes_topic: "host/hewalex"
+      json_attributes_template: "{{ value_json.p408 | tojson }}"
+      #icon: "mdi:sine-wave"
+      device_class: temperature
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"                           
+        
+        
+    - name: "Temp. ustawiona dla CO"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - Temp. ustawiona dla CO"
+      object_id: "Hewalex - Temp. ustawiona dla CO"
+      value_template: "{{ value_json.p410.value }}"
+      unit_of_measurement: "°C"
+      json_attributes_topic: "host/hewalex"
+      json_attributes_template: "{{ value_json.p410 | tojson }}"
+      #icon: "mdi:sine-wave"
+      device_class: temperature
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"     
+        
+        
+    - name: "Konfiguracja instalacji pompy ciepła"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - Konfiguracja instalacji pompy ciepła"
+      object_id: "Hewalex - Konfiguracja instalacji pompy ciepła"
+      value_template: "{{ value_json.p1002.form_array[value_json.p1002.value] }}"
+      #unit_of_measurement: "°C"
+      json_attributes_topic: "host/hewalex"
+      json_attributes_template: "{{ value_json.p1002 | tojson }}"
+      icon: "mdi:cog"
+      #device_class: temperature
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"     
+
+    - name: "Konfiguracja instalacji pompy ciepła - wartość"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - Konfiguracja instalacji pompy ciepła - wartość"
+      object_id: "Hewalex - Konfiguracja instalacji pompy ciepła - wartość"
+      value_template: "{{ value_json.p1002.value | int }}"
+      #unit_of_measurement: "°C"
+      json_attributes_topic: "host/hewalex"
+      json_attributes_template: "{{ value_json.p1002 | tojson }}"
+      icon: "mdi:cog"
+      #device_class: temperature
+      state_class: measurement
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"     
+
+
+    - name: "Konfiguracja zaworu mieszającego"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - Konfiguracja zaworu mieszającego"
+      object_id: "Hewalex - Konfiguracja zaworu mieszającego"
+      #unit_of_measurement: "°C"
+      value_template: |
+        {% if value_json.p1162.value == 1 %}
+            CO
+        {% else %}
+            {% if value_json.p1162.value == 2 %}
+                inst. CO
+            {% else %}
+                brak
+            {% endif %}            
+        {% endif %}
+      json_attributes_topic: "host/hewalex"
+      json_attributes_template: "{{ value_json.p1162 | tojson }}"
+      icon: "mdi:cog"
+      #device_class: temperature
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"     
+
+    - name: "Konfiguracja zaworu mieszającego - wartość"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - Konfiguracja zaworu mieszającego - wartość"
+      object_id: "Hewalex - Konfiguracja zaworu mieszającego - wartość"
+      value_template: "{{ value_json.p1162.value | int }}"
+      #unit_of_measurement: "°C"
+      json_attributes_topic: "host/hewalex"
+      json_attributes_template: "{{ value_json.p1162 | tojson }}"
+      icon: "mdi:cog"
+      #device_class: temperature
+      state_class: measurement
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"     
+        
+    - name: "Temp. wody dla magazynu ciepła CO"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - Temp. wody dla magazynu ciepła CO"
+      object_id: "Hewalex - Temp. wody dla magazynu ciepła CO"
+      value_template: "{{ value_json.p1258.value }}"
+      unit_of_measurement: "°C"
+      json_attributes_topic: "host/hewalex"
+      json_attributes_template: "{{ value_json.p1258 | tojson }}"
+      #icon: "mdi:clock"
+      device_class: temperature
+      state_class: measurement
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"
+        
+    - name: "Max. bieg sprężarki - PV, magazyn ciepła"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - Max. bieg sprężarki - PV, MC"
+      object_id: "Hewalex - Max. bieg sprężarki - PV, MC"
+      value_template: "{{ value_json.p1262.value }}"
+      unit_of_measurement: ""
+      json_attributes_topic: "host/hewalex"
+      json_attributes_template: "{{ value_json.p1262 | tojson }}"
+      #icon: "mdi:clock"
+      #device_class: temperature
+      state_class: measurement
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"
+
+        
+    - name: "Czas pracy - grzałka CWU"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - Czas pracy - grzałka CWU"
+      object_id: "Hewalex - Czas pracy - grzałka CWU"
+      value_template: "{{ value_json.timework_kociol_cwu }}"
+      unit_of_measurement: "h"
+      #json_attributes_topic: "host/hewalex"
+      #json_attributes_template: "{{ value_json.p410 | tojson }}"
+      icon: "mdi:clock"
+      #device_class: temperature
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"             
+
+        
+    - name: "Czas pracy - grzałka CO"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - Czas pracy - grzałka CO"
+      object_id: "Hewalex - Czas pracy - grzałka CO"
+      value_template: "{{ value_json.timework_kociol_co }}"
+      unit_of_measurement: "h"
+      #json_attributes_topic: "host/hewalex"
+      #json_attributes_template: "{{ value_json.p410 | tojson }}"
+      icon: "mdi:clock"
+      #device_class: temperature
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"             
+
+        
+    - name: "Czas pracy - grzanie CO"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - Czas pracy - grzanie CO"
+      object_id: "Hewalex - Czas pracy - grzanie CO"
+      value_template: "{{ value_json.timework_co_grzanie }}"
+      unit_of_measurement: "h"
+      #json_attributes_topic: "host/hewalex"
+      #json_attributes_template: "{{ value_json.p410 | tojson }}"
+      icon: "mdi:clock"
+      #device_class: temperature
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"                             
+
+        
+    - name: "Czas pracy - grzanie CWU"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - Czas pracy - grzanie CWU"
+      object_id: "Hewalex - Czas pracy - grzanie CWU"
+      value_template: "{{ value_json.timework_cwu }}"
+      unit_of_measurement: "h"
+      #json_attributes_topic: "host/hewalex"
+      #json_attributes_template: "{{ value_json.p410 | tojson }}"
+      icon: "mdi:clock"
+      #device_class: temperature
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"
+        
+   
+        
+        
+#-------------------------BINARY SENSOR
+binary_sensor:
+    - name: "Termostat pokojowy obiegu CO1 - T12"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - temp. pokojowa obiegu CO1 - T12"
+      object_id: "Hewalex - temp. pokojowa obiegu CO1 - T12"
+      value_template: "{{ value_json.p152.value }}"
+      payload_on: "on"
+      payload_off: "off"
+      json_attributes_topic: "host/hewalex"
+      json_attributes_template: "{{ value_json.p152 | tojson }}"
+      #icon: "mdi:sine-wave"
+      device_class: cold
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"  
+        
+    - name: "S15 - czujnik przepływu"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - S15 - czujnik przepływu"
+      object_id: "Hewalex - S15 - czujnik przepływu"
+      value_template: "{{ value_json.p158.value }}"
+      payload_on: "on"
+      payload_off: "off"
+      json_attributes_topic: "host/hewalex"
+      json_attributes_template: "{{ value_json.p158 | tojson }}"
+      #icon: "mdi:sine-wave"
+      #device_class: none
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"  
+        
+        
+    - name: "P1 - pompa skraplacza  (RL01)"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - P1 - pompa skraplacza  (RL01)"
+      object_id: "Hewalex - P1 - pompa skraplacza  (RL01)"
+      value_template: |
+        {% if value_json.p208.value|int|bitwise_and(2**0) > 0  %}
+            on
+        {% else %}
+            off
+        {% endif %}
+      payload_on: "on"
+      payload_off: "off"
+      json_attributes_topic: "host/hewalex"
+      json_attributes_template: "{{ value_json.p208 | tojson }}"
+      #icon: "mdi:sine-wave"
+      #device_class: none
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"          
+        
+        
+    - name: "Zawór ZT2: CWU"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - Zawór ZT2: CWU"
+      object_id: "Hewalex - Zawór ZT2: CWU"
+      value_template: |
+        {% if value_json.p208.value|int|bitwise_and(2**3) > 0  %}
+            on
+        {% else %}
+            off
+        {% endif %}
+      payload_on: "on"
+      payload_off: "off"
+      json_attributes_topic: "host/hewalex"
+      json_attributes_template: "{{ value_json.p208 | tojson }}"
+      #icon: "mdi:sine-wave"
+      #device_class: none
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"                  
+        
+        
+    - name: "Pompa cyrkulacyjna CWU"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - Pompa cyrkulacyjna CWU"
+      object_id: "Hewalex - Pompa cyrkulacyjna CWU"
+      value_template: |
+        {% if value_json.p208.value|int|bitwise_and(2**4) > 0  %}
+            on
+        {% else %}
+            off
+        {% endif %}
+      payload_on: "on"
+      payload_off: "off"
+      json_attributes_topic: "host/hewalex"
+      json_attributes_template: "{{ value_json.p208 | tojson }}"
+      #icon: "mdi:sine-wave"
+      #device_class: none
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"                         
+        
+        
+    - name: "Pompa obiegu CO1"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - Pompa obiegu CO1"
+      object_id: "Hewalex - Pompa obiegu CO1"
+      value_template: |
+        {% if value_json.p208.value|int|bitwise_and(2**5) > 0  %}
+            on
+        {% else %}
+            off
+        {% endif %}
+      payload_on: "on"
+      payload_off: "off"
+      json_attributes_topic: "host/hewalex"
+      json_attributes_template: "{{ value_json.p208 | tojson }}"
+      #icon: "mdi:sine-wave"
+      #device_class: none
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex" 
+        
+        
+    - name: "Włączenie grzałki dla CWU"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - Włączenie grzałki dla CWU"
+      object_id: "Hewalex - Włączenie grzałki dla CWU"
+      value_template: |
+        {% if value_json.p208.value|int|bitwise_and(2**11) > 0  %}
+            on
+        {% else %}
+            off
+        {% endif %}
+      payload_on: "on"
+      payload_off: "off"
+      json_attributes_topic: "host/hewalex"
+      json_attributes_template: "{{ value_json.p208 | tojson }}"
+      #icon: "mdi:sine-wave"
+      #device_class: none
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"                                 
+        
+        
+    - name: "Włączenie grzałki dla CO"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - Włączenie grzałki dla CO"
+      object_id: "Hewalex - Włączenie grzałki dla CO"
+      value_template: |
+        {% if value_json.p208.value|int|bitwise_and(2**12) > 0  %}
+            on
+        {% else %}
+            off
+        {% endif %}
+      payload_on: "on"
+      payload_off: "off"
+      json_attributes_topic: "host/hewalex"
+      json_attributes_template: "{{ value_json.p208 | tojson }}"
+      #icon: "mdi:sine-wave"
+      #device_class: none
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"                    
+        
+        
+    - name: "Stan rozmrażania"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - Stan rozmrażania"
+      object_id: "Hewalex - Stan rozmrażania"
+      value_template: |
+        {% if value_json.p332.value|int|bitwise_and(2**0) > 0  %}
+            on
+        {% else %}
+            off
+        {% endif %}
+      payload_on: "on"
+      payload_off: "off"
+      json_attributes_topic: "host/hewalex"
+      json_attributes_template: "{{ value_json.p332 | tojson }}"
+      #icon: "mdi:sine-wave"
+      #device_class: none
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"                            
+        
+
+    - name: "Współpraca PV"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - Współpraca PV"
+      object_id: "Hewalex - Współpraca PV"
+      value_template: |
+        {% if value_json.p432.value|int > 0  %}
+            on
+        {% else %}
+            off
+        {% endif %}
+      payload_on: "on"
+      payload_off: "off"
+      json_attributes_topic: "host/hewalex"
+      json_attributes_template: "{{ value_json.p432 | tojson }}"
+      #icon: "mdi:sine-wave"
+      #device_class: none
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"                            
+        
+
+    - name: "Magazynowanie ciepła"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - Magazynowanie ciepła"
+      object_id: "Hewalex - Magazynowanie ciepła"
+      value_template: |
+        {% if value_json.p433.value|int > 0  %}
+            on
+        {% else %}
+            off
+        {% endif %}
+      payload_on: "on"
+      payload_off: "off"
+      json_attributes_topic: "host/hewalex"
+      json_attributes_template: "{{ value_json.p433 | tojson }}"
+      #icon: "mdi:sine-wave"
+      #device_class: none
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"                                    
+        
+
+    - name: "Tryb goście"
+      state_topic: "host/hewalex"
+      unique_id: "Hewalex - Tryb goście"
+      object_id: "Hewalex - Tryb goście"
+      value_template: |
+        {% if value_json.p464.value|int > 0  %}
+            on
+        {% else %}
+            off
+        {% endif %}
+      payload_on: "on"
+      payload_off: "off"
+      json_attributes_topic: "host/hewalex"
+      json_attributes_template: "{{ value_json.p464 | tojson }}"
+      #icon: "mdi:sine-wave"
+      #device_class: none
+      availability:
+        - topic: "host/hewalex/availability"
+      payload_available: "online"
+      payload_not_available: "offline"
+      device:
+        name: "Pompa ciepła PCCO 13kW" 
+        identifiers: "Hewalex PCCO 13kW"
+        model: "PCCO 13kW"
+        manufacturer: "Hewalex"                                         
+      
