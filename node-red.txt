@@ -1,0 +1,682 @@
+[
+    {
+        "id": "02f48decb46409b5",
+        "type": "tab",
+        "label": "HewalexV2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "5a859c2284324820",
+        "type": "json",
+        "z": "02f48decb46409b5",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 630,
+        "y": 360,
+        "wires": [
+            [
+                "b94e586ca43f4771",
+                "c158cbd3c21188b2"
+            ]
+        ]
+    },
+    {
+        "id": "3ab521dea240919b",
+        "type": "switch",
+        "z": "02f48decb46409b5",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "ERROR",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 490,
+        "y": 160,
+        "wires": [
+            [
+                "534fe93788788f91",
+                "91d0a20c9cd2b27c"
+            ],
+            [
+                "5a859c2284324820",
+                "9936426ea969a272"
+            ]
+        ]
+    },
+    {
+        "id": "f596feeb4fbc71d1",
+        "type": "pythonshell in",
+        "z": "02f48decb46409b5",
+        "name": "",
+        "pyfile": "/home/mra-rpi/Raspberry/Hewalex/hewalex.py",
+        "virtualenv": "",
+        "continuous": false,
+        "stdInData": false,
+        "x": 300,
+        "y": 160,
+        "wires": [
+            [
+                "3ab521dea240919b",
+                "d8e2f01259b89cc4"
+            ]
+        ]
+    },
+    {
+        "id": "d5c488729fcb233e",
+        "type": "debug",
+        "z": "02f48decb46409b5",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1110,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "db8d3dfe9616748b",
+        "type": "mqtt out",
+        "z": "02f48decb46409b5",
+        "name": "",
+        "topic": "host/hewalex",
+        "qos": "2",
+        "retain": "true",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "874aae1963d7b860",
+        "x": 1110,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "b94e586ca43f4771",
+        "type": "function",
+        "z": "02f48decb46409b5",
+        "name": "Dostępny",
+        "func": "new_msg = {payload: \"online\"}\n\nreturn new_msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 400,
+        "wires": [
+            [
+                "b44d6222e2e2c760"
+            ]
+        ]
+    },
+    {
+        "id": "b44d6222e2e2c760",
+        "type": "mqtt out",
+        "z": "02f48decb46409b5",
+        "name": "",
+        "topic": "host/hewalex/availability",
+        "qos": "2",
+        "retain": "true",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "874aae1963d7b860",
+        "x": 1350,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "b904be8537610e3a",
+        "type": "inject",
+        "z": "02f48decb46409b5",
+        "name": "1 min",
+        "props": [],
+        "repeat": "3600",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 110,
+        "y": 160,
+        "wires": [
+            [
+                "f596feeb4fbc71d1"
+            ]
+        ]
+    },
+    {
+        "id": "c158cbd3c21188b2",
+        "type": "function",
+        "z": "02f48decb46409b5",
+        "name": "Change parameter",
+        "func": "//Ponieważ nie mam temperatury w domu tylko korzystam z termostatu\n//te wartości zamieniam na on/off\n\nif (msg.payload.p152.value == -50){\n    msg.payload.p152.value = \"off\"\n}else{\n     msg.payload.p152.value = \"on\"\n}\n\nif (msg.payload.p158.value == -50){\n    msg.payload.p158.value = \"off\"\n}else{\n     msg.payload.p158.value = \"on\"\n}\n\n\n//Obsługa daty\n//robię przesuniecie aby godzian zgadzała się ze strefą czasową\nmsg.payload.OLD_date_change = msg.payload.date_change\n\nDT = new Date(msg.payload.date_change);\nDT.setHours(DT.getHours() + 2);\nmsg.payload.date_change = new Date(DT).toISOString().slice(0, 19).replace('T', ' ');\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 280,
+        "wires": [
+            [
+                "db8d3dfe9616748b",
+                "d5c488729fcb233e"
+            ]
+        ]
+    },
+    {
+        "id": "d8e2f01259b89cc4",
+        "type": "debug",
+        "z": "02f48decb46409b5",
+        "name": "Odpowiedź z serwere",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 540,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "534fe93788788f91",
+        "type": "mqtt out",
+        "z": "02f48decb46409b5",
+        "name": "",
+        "topic": "host/hewalex/status/readparameters",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "874aae1963d7b860",
+        "x": 1010,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "9936426ea969a272",
+        "type": "change",
+        "z": "02f48decb46409b5",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "ok",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 740,
+        "y": 220,
+        "wires": [
+            [
+                "534fe93788788f91"
+            ]
+        ]
+    },
+    {
+        "id": "91d0a20c9cd2b27c",
+        "type": "function",
+        "z": "02f48decb46409b5",
+        "name": "Niedostępny",
+        "func": "new_msg = {payload: \"offline\"}\n\nreturn new_msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1150,
+        "y": 80,
+        "wires": [
+            [
+                "b44d6222e2e2c760"
+            ]
+        ]
+    },
+    {
+        "id": "06f909fa5c29865e",
+        "type": "switch",
+        "z": "02f48decb46409b5",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "on",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "off",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 550,
+        "y": 620,
+        "wires": [
+            [
+                "8e6d208695228c10"
+            ],
+            [
+                "a1739d857a932584"
+            ]
+        ]
+    },
+    {
+        "id": "d8b5d007d218380b",
+        "type": "pythonshell in",
+        "z": "02f48decb46409b5",
+        "name": "",
+        "pyfile": "/home/mra-rpi/Raspberry/Hewalex/hewalex_magCiepla_on.py",
+        "virtualenv": "",
+        "continuous": false,
+        "stdInData": false,
+        "x": 1120,
+        "y": 580,
+        "wires": [
+            [
+                "b72a7dc1013def4d",
+                "1357f0a672460c50"
+            ]
+        ]
+    },
+    {
+        "id": "167a11f3df809c2c",
+        "type": "pythonshell in",
+        "z": "02f48decb46409b5",
+        "name": "",
+        "pyfile": "/home/mra-rpi/Raspberry/Hewalex/hewalex_magCiepla_off.py",
+        "virtualenv": "",
+        "continuous": false,
+        "stdInData": false,
+        "x": 1120,
+        "y": 640,
+        "wires": [
+            [
+                "5feec958a8095398",
+                "1357f0a672460c50"
+            ]
+        ]
+    },
+    {
+        "id": "b72a7dc1013def4d",
+        "type": "debug",
+        "z": "02f48decb46409b5",
+        "name": "Debug ON",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1290,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "5feec958a8095398",
+        "type": "debug",
+        "z": "02f48decb46409b5",
+        "name": "Debug OFF",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1310,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "8e6d208695228c10",
+        "type": "delay",
+        "z": "02f48decb46409b5",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "2",
+        "rateUnits": "minute",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 840,
+        "y": 580,
+        "wires": [
+            [
+                "d8b5d007d218380b"
+            ]
+        ]
+    },
+    {
+        "id": "a1739d857a932584",
+        "type": "delay",
+        "z": "02f48decb46409b5",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "2",
+        "rateUnits": "minute",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 840,
+        "y": 640,
+        "wires": [
+            [
+                "167a11f3df809c2c"
+            ]
+        ]
+    },
+    {
+        "id": "1357f0a672460c50",
+        "type": "mqtt out",
+        "z": "02f48decb46409b5",
+        "name": "",
+        "topic": "host/hewalex/status/setmagciepla",
+        "qos": "2",
+        "retain": "true",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "874aae1963d7b860",
+        "x": 1400,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "b42a16d9c01910b3",
+        "type": "mqtt in",
+        "z": "02f48decb46409b5",
+        "name": "",
+        "topic": "ha/hewalex/cmd_magciepla",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "874aae1963d7b860",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 280,
+        "y": 560,
+        "wires": [
+            [
+                "06f909fa5c29865e"
+            ]
+        ]
+    },
+    {
+        "id": "6bf882d5a8627aea",
+        "type": "inject",
+        "z": "02f48decb46409b5",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "on",
+        "payloadType": "str",
+        "x": 330,
+        "y": 660,
+        "wires": [
+            [
+                "06f909fa5c29865e"
+            ]
+        ]
+    },
+    {
+        "id": "bdc52f376c1f9f4c",
+        "type": "inject",
+        "z": "02f48decb46409b5",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "off",
+        "payloadType": "str",
+        "x": 330,
+        "y": 720,
+        "wires": [
+            [
+                "06f909fa5c29865e"
+            ]
+        ]
+    },
+    {
+        "id": "71828d22f66b6508",
+        "type": "pythonshell in",
+        "z": "02f48decb46409b5",
+        "name": "",
+        "pyfile": "/home/mra-rpi/Raspberry/Hewalex/hewalex_set_2880.py",
+        "virtualenv": "",
+        "continuous": false,
+        "stdInData": false,
+        "x": 740,
+        "y": 900,
+        "wires": [
+            [
+                "dff0448afd60b590",
+                "dbd3cd26a083f1bd"
+            ]
+        ]
+    },
+    {
+        "id": "1a32803d5d1fa9af",
+        "type": "inject",
+        "z": "02f48decb46409b5",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 410,
+        "y": 1120,
+        "wires": [
+            [
+                "71828d22f66b6508"
+            ]
+        ]
+    },
+    {
+        "id": "dff0448afd60b590",
+        "type": "debug",
+        "z": "02f48decb46409b5",
+        "name": "Sprawdzenie",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 990,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "7406824097446cf4",
+        "type": "inject",
+        "z": "02f48decb46409b5",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "42",
+        "payloadType": "num",
+        "x": 410,
+        "y": 980,
+        "wires": [
+            [
+                "71828d22f66b6508"
+            ]
+        ]
+    },
+    {
+        "id": "cf3779b9f9758f7c",
+        "type": "inject",
+        "z": "02f48decb46409b5",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "33.9634",
+        "payloadType": "num",
+        "x": 420,
+        "y": 1060,
+        "wires": [
+            [
+                "71828d22f66b6508"
+            ]
+        ]
+    },
+    {
+        "id": "dbd3cd26a083f1bd",
+        "type": "mqtt out",
+        "z": "02f48decb46409b5",
+        "name": "",
+        "topic": "host/hewalex/status/settempmagciepla",
+        "qos": "2",
+        "retain": "true",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "874aae1963d7b860",
+        "x": 1070,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "968c5a36a6730730",
+        "type": "mqtt in",
+        "z": "02f48decb46409b5",
+        "name": "",
+        "topic": "ha/hewalex/set_tempmagciepla",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "874aae1963d7b860",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 310,
+        "y": 900,
+        "wires": [
+            [
+                "71828d22f66b6508"
+            ]
+        ]
+    },
+    {
+        "id": "874aae1963d7b860",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    }
+]
