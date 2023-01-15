@@ -17,9 +17,9 @@
 
   Ustawia temperaturę dla magazynu ciepła. Wartość temperatury należy podać przy wywołaniu programu. Jak jej nie podamy ustawimy 42 stC.
 
-# Ustawienia
+# Ustawienia w plikach .py
 
-aaaa - należy podać ciąg znaków logowania do ekontrol. Ciąg wygenerowany jest przez skrypty na stronie ekontrol.pl podczas logowania. Można go podejrzeć w przeglądarce w narzędziu dla developerów.  
+aaaa - należy podać ciąg znaków logowania do ekontrol. Ciąg wygenerowany jest przez skrypty na stronie ekontrol.pl podczas logowania. Można go podejrzeć w przeglądarce w narzędziu dla developerów. Zobaczcie screeny.
 
 bbbb - numer seryjny sterownika. Znajdziesz go w ekontrol.pl -> mój profil -> urządzenia -> sterowniki -> numer seryjny
 
