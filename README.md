@@ -27,7 +27,16 @@ cccc - Controller_ID - numer można odczytać w liście parametrów zwracanych p
 
 <h2> Node-Red</h2>
 
-<h3> - node-red.txt - wywołanie w node-red/h3>
+<h3> - node-red.txt - wywołanie w node-red</h3>
 
 Wywołanie programów w node-red i wystawienie parametrów po mqtt do np. HA.
+
+<h2> Home Assistant - MQTT</h2>
+
+<h3> - hewalex.yaml - plik yaml z konfiguracją sensorów MQTT w HA</h3>
+
+W configuration.yaml dodaj 
+<pre>mqtt: !include_dir_merge_named mqtt</pre>
+
+Plik hewalex.yaml wrzuć do katalogu w HA o nazwie mqtt
 
