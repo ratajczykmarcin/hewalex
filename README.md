@@ -25,6 +25,8 @@ bbbb - numer seryjny sterownika. Znajdziesz go w ekontrol.pl -> mój profil -> u
 
 cccc - Controller_ID - numer można odczytać w liście parametrów zwracanych przez serwer ekontrol. Więc najpierw skonfiguruj i uruchom hewalex.py.
 
+dddd - Hasło instalatora. Standardowe 1305
+
 <h2> Node-Red</h2>
 
 <h3> - node-red.txt - wywołanie w node-red</h3>
