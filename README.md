@@ -9,7 +9,7 @@
 
   Program sprawdza dzień tygodnia i ustawia harmonogram magazynu dla całego dnia (wszystkie godziny.)
 
-<h3> - hewalex_magCiepla_on.py - usunięcie harmonogramu magazynu ciepła</h3>
+<h3> - hewalex_magCiepla_off.py - usunięcie harmonogramu magazynu ciepła</h3>
 
   Kasuje wszystkie ustawione godziny w harmonogramie.
 
