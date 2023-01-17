@@ -6,7 +6,7 @@
 
 <h3> - hewalex.py - odczyt parametów z serwera</h3>
 
-Dla niektórych pomp parametry są wysyłane w 22_pl.js. Odpowiednio zedytuj plik. 
+Dla niektórych pomp parametry są wysyłane w 22_pl.js. Odpowiednio zedytuj plik. Lub sprawdź u siebie. Zerknij w screen.
 
 <pre>getdetails = s.get("https://ekontrol.pl/public/js/controllers_map/26_pl.js")
 #getdetails = s.get("https://ekontrol.pl/public/js/controllers_map/22_pl.js")</pre>
