@@ -5,6 +5,12 @@
 
 
 <h3> - hewalex.py - odczyt parametów z serwera</h3>
+
+Dla niektórych pomp parametry są wysyłane w 22_pl.js. Odpowiednio zedytuj plik. 
+
+<pre>getdetails = s.get("https://ekontrol.pl/public/js/controllers_map/26_pl.js")
+#getdetails = s.get("https://ekontrol.pl/public/js/controllers_map/22_pl.js")</pre>
+
 <h3> - hewalex_magCiepla_on.py - ustawienie harmonogramu magazynu ciepła w danym dniu</h3>
 
   Program sprawdza dzień tygodnia i ustawia harmonogram magazynu dla całego dnia (wszystkie godziny.)
