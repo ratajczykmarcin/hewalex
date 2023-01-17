@@ -29,6 +29,7 @@ try:
 		
 
 		getdetails = s.get("https://ekontrol.pl/public/js/controllers_map/26_pl.js")
+		#getdetails = s.get("https://ekontrol.pl/public/js/controllers_map/22_pl.js") - czasmi jest to 22_pl.js
 		parameters = json.loads(getdetails.text)
 		#print(parameters)
 
