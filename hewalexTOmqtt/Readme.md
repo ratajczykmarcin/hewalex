@@ -6,12 +6,12 @@
 
 <h3> - hewalexTOmqtt.py - odczyt parametów z serwera</h3>
 
-Dla niektórych pomp parametry są wysyłane w 22_pl.js. Odpowiednio zedytuj plik. Lub sprawdź u siebie. Zerknij w screen jakSprawdzicParametry.png.
+Plik umieść bezpośrednio w katalogu config w HA.Dla niektórych pomp parametry są wysyłane w 22_pl.js. Odpowiednio zedytuj plik. Lub sprawdź u siebie. Zerknij w screen jakSprawdzicParametry.png.
 
 <pre>getdetails = s.get("https://ekontrol.pl/public/js/controllers_map/26_pl.js")
 #getdetails = s.get("https://ekontrol.pl/public/js/controllers_map/22_pl.js")</pre>
 
-Umieść bezpośrednio w katalogu config.
+
 
 # Ustawienia w plikach .py
 
