@@ -2,7 +2,7 @@
 
 <h2> HA </h2>
 
-W terminalu HA musiałeb doinstalować request i paho-mqtt
+W terminalu HA musiałe doinstalować request i paho-mqtt
 
 <pre>
 pip install requests
