@@ -11,6 +11,7 @@ Dla niektórych pomp parametry są wysyłane w 22_pl.js. Odpowiednio zedytuj pli
 <pre>getdetails = s.get("https://ekontrol.pl/public/js/controllers_map/26_pl.js")
 #getdetails = s.get("https://ekontrol.pl/public/js/controllers_map/22_pl.js")</pre>
 
+Umieść bezpośrednio w katalogu config.
 
 # Ustawienia w plikach .py
 
