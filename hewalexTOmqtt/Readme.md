@@ -1,5 +1,15 @@
 # Odczyt/zapis z serwera ekontrol dla pomp ciepła Hewalex.
 
+<h2> HA </h2>
+
+W terminalu HA musiałeb doinstalować request i paho-mqtt
+
+<pre>
+pip install requests
+pip3 install paho-mqtt
+</pre>
+
+
 <h2> Pliki python</h2>
 
 
