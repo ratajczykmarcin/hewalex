@@ -1,4 +1,6 @@
-# Odczyt/zapis z serwera ekontrol dla pomp ciepła Hewalex.
+# To juz nie działa od 12.2023!!!
+
+Odczyt/zapis z serwera ekontrol dla pomp ciepła Hewalex.
 
 <h2> Pliki python</h2>
 
